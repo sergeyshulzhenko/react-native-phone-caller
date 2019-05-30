@@ -78,3 +78,27 @@ import PhoneCaller from 'react-native-phone-caller';
 
 PhoneCaller.call('+98887776655');
 ```
+
+## Permissions ##
+(Android only) [PermissionsAndroid](https://facebook.github.io/react-native/docs/permissionsandroid)
+
+Request the **CALL_PHONE** permission beforehand
+
+```javascript
+try {
+    const granted = await PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.CALL_PHONE,
+      {
+        ...
+      },
+    );
+    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+      await PhoneCaller.call('+98887776655');
+      ...
+    } else {
+      Alert.alert('Error', 'Camera permission denied');
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+```
