@@ -3,7 +3,11 @@
 
 ## Getting started
 
-`$ npm install react-native-phone-caller --save`
+`$ npm install --save react-native-phone-caller`
+
+or
+
+`$ yarn add react-native-phone-caller`
 
 ### Mostly automatic installation
 
@@ -31,23 +35,13 @@
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      compile project(':react-native-phone-caller')
+      implementation project(':react-native-phone-caller')
   	```
-
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
-
-1. In Visual Studio add the `RNPhoneCaller.sln` in `node_modules/react-native-phone-caller/windows/RNPhoneCaller.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using Phone.Caller.RNPhoneCaller;` to the usings at the top of the file
-  - Add `new RNPhoneCallerPackage()` to the `List<IReactPackage>` returned by the `Packages` method
-
 
 ## Usage
 ```javascript
 import RNPhoneCaller from 'react-native-phone-caller';
 
 // TODO: What to do with the module?
-RNPhoneCaller;
+RNPhoneCaller.call('+98887776655');
 ```
-  
