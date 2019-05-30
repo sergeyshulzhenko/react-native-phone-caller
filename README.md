@@ -96,7 +96,7 @@ try {
       await PhoneCaller.call('+98887776655');
       ...
     } else {
-      Alert.alert('Error', 'Camera permission denied');
+      Alert.alert('Error', 'Call phone permission denied');
     }
   } catch (err) {
     console.warn(err);
