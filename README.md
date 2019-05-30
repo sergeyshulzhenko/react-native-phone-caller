@@ -3,12 +3,10 @@
 
 React Native phone calls for iOS and Android
 
-## Getting started
+### Getting started
 
 `$ npm install --save react-native-phone-caller`
-
 or
-
 `$ yarn add react-native-phone-caller`
 
 ### Mostly automatic installation
@@ -54,16 +52,26 @@ or
   ....
   ```
 2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-phone-caller'
-  	project(':react-native-phone-caller').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-phone-caller/android')
-  	```
+  ```
+  include ':react-native-phone-caller'
+  project(':react-native-phone-caller').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-phone-caller/android')
+  ```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-    implementation project(':react-native-phone-caller')
-  	```
+  ```
+implementation project(':react-native-phone-caller')
+  ```
 
-## Usage
+### Usage
+```javascript
+PhoneCaller.call(tel)
+```
+Arguments:
+ - tel: String - a phone number to call
+
+Returns: **Promise**
+ - fulfilled: String - `Success`
+ - rejected: Error
+
 ```javascript
 import PhoneCaller from 'react-native-phone-caller';
 
