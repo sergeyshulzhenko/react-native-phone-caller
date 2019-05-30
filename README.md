@@ -25,23 +25,45 @@ or
 
 #### Android
 
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.RNPhoneCallerPackage;` to the imports at the top of the file
+1. Open up `android/app/src/main/java/[...]/MainApplication.java`
+  - Add `import com.PhoneCaller.RNPhoneCallerPackage;` to the imports at the top of the file ``
   - Add `new RNPhoneCallerPackage()` to the list returned by the `getPackages()` method
+  ```java
+  import com.PhoneCaller.RNPhoneCallerPackage; // <--- 1
+
+  public class MainApplication extends Application implements ReactApplication {
+
+  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+      @Override
+      protected boolean getUseDeveloperSupport() {
+        return BuildConfig.DEBUG;
+      }
+
+      @Override
+      protected List<ReactPackage> getPackages() {
+
+      return Arrays.<ReactPackage>asList(
+          new MainReactPackage(),
+          new RNPhoneCallerPackage() // <--- 2
+      );
+    }
+  };
+
+  ....
+  ```
 2. Append the following lines to `android/settings.gradle`:
   	```
   	include ':react-native-phone-caller'
-  	project(':react-native-phone-caller').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-phone-caller/android')
+  	project(':react-native-phone-caller').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-phone-caller/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      implementation project(':react-native-phone-caller')
+    implementation project(':react-native-phone-caller')
   	```
 
 ## Usage
 ```javascript
 import RNPhoneCaller from 'react-native-phone-caller';
 
-// TODO: What to do with the module?
 RNPhoneCaller.call('+98887776655');
 ```
