@@ -12,8 +12,8 @@
     "react-native",
     "phone",
     "android",
-    "ios",
+    "ios"
   ],
   "author": "Sergey Shulzhenko",
-  "license": "",
+  "license": ""
 }
