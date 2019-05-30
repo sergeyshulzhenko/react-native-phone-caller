@@ -1,6 +1,8 @@
 
 # react-native-phone-caller
 
+React Native phone calls for iOS and Android
+
 ## Getting started
 
 `$ npm install --save react-native-phone-caller`
@@ -63,7 +65,7 @@ or
 
 ## Usage
 ```javascript
-import RNPhoneCaller from 'react-native-phone-caller';
+import PhoneCaller from 'react-native-phone-caller';
 
-RNPhoneCaller.call('+98887776655');
+PhoneCaller.call('+98887776655');
 ```
