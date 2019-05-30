@@ -1,5 +1,6 @@
 
 # react-native-phone-caller
+[![npm version](https://badge.fury.io/js/react-native-phone-caller.svg)](https://badge.fury.io/js/react-native-phone-caller)
 
 React Native phone calls for iOS and Android
 
